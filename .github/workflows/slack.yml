@@ -1,4 +1,4 @@
-name: CI
+name: message to slack
 
 on: [push]
 
@@ -9,4 +9,6 @@ jobs:
     
     steps:
     - uses: comfuture/actions/slack@v1
+      env:
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
       run: -h bot_test -m "pushed!"
