@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: comfuture/actions/slack@v1
+    - uses: comfuture/actions/slack@master
       with:
         args: -h bot_test -m "pushed!"
       env:
