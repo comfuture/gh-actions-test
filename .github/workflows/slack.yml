@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: comfuture/actions/slack@master
       with:
-        args: -h bot_test -m "pushed!"
+        args: chat send "pushed!" "#general"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
