@@ -17,8 +17,7 @@ jobs:
     - run: sleep 3
     - uses: comfuture/actions/slack@master
       with:
-        args: >
-          chat update --message "ok, bye"
-            --color good
-            --channel "#general"
-            --timestamp ${{ steps.greet.outputs.message_ts }}
+        args: chat update --message "ok, bye"
+          --color good
+          --channel "#general"
+          --timestamp ${{ steps.greet.outputs.message_ts }}
