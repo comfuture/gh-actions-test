@@ -13,4 +13,5 @@ jobs:
       - uses: comfuture/actions/ghpages@master
         env:
           BUILD_DIR: public_html
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
