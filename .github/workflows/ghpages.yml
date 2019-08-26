@@ -3,11 +3,11 @@ on:
   push:
     branches:
     - master
-  jobs:
-    publish:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: comfuture/actions/ghpages@master
-          with:
-            build_dir: public_html
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: comfuture/actions/ghpages@master
+        with:
+          build_dir: public_html
 
