@@ -11,6 +11,6 @@ jobs:
         with:
           ref: master
       - uses: comfuture/actions/ghpages@master
-        with:
-          build_dir: public_html
+        env:
+          BUILD_DIR: public_html
 
