@@ -22,11 +22,11 @@ jobs:
     - run: sleep 3
     - uses: comfuture/actions/slack@master
       with:
-        args: chat update "ok, bye"${{ steps.greet.outputs.message_ts }} "#general"
+        args: file upload args.txt "#general" --title "Recent file"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     - uses: comfuture/actions/slack@master
       with:
-        args: file upload args.txt '#general' --title 'Recent file'
+        args: chat update "ok, bye" ${{ steps.greet.outputs.message_ts }} "#general"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
