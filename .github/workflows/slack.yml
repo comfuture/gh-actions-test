@@ -14,7 +14,15 @@ jobs:
         args: chat send "Hello" "#general"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+    - uses: comfuture/actions/writefile@master
+      with:
+        filename: args.txt
+        content: |
+          chat update "ok, bye" ${{ steps.greet.outputs.message_ts }} "#general"
     - run: sleep 3
     - uses: comfuture/actions/slack@master
       with:
-        args: chat update "ok, bye" "#general" --timestamp ${{ steps.greet.outputs.message_ts }}
+        args: chat update "ok, bye"${{ steps.greet.outputs.message_ts }} "#general"
+    - uses: comfuture/actions/slack@master
+      with:
+        args: file upload args.txt '#general' --title 'Recent file'
