@@ -27,6 +27,6 @@ jobs:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     - uses: comfuture/actions/slack@master
       with:
-        args: chat update "ok, bye" ${{ steps.greet.outputs.message_ts }} "#general"
+        args: chat send "ok, bye" ${{ steps.greet.outputs.message_ts }} "#general"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
