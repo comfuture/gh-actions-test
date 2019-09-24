@@ -11,14 +11,14 @@ jobs:
     - uses: comfuture/actions/slack@master
       id: greet
       with:
-        args: '["chat", "send", "Hello 1", "#general"]'
+        args: chat send "Hello 1" "#general"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     - uses: comfuture/actions/writefile@master
       with:
         filename: args.txt
         content: |
-          chat update 'ok, bye' ${{ steps.greet.outputs.message_ts }} '#general'
+          chat update "ok, bye" ${{ steps.greet.outputs.message_ts }} "#general"
     - run: sleep 3
     - uses: comfuture/actions/slack@master
       with:
@@ -27,6 +27,6 @@ jobs:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     - uses: comfuture/actions/slack@master
       with:
-        args: chat update 'ok,bye' ${{ steps.greet.outputs.message_ts }} '#general'
+        args: chat update "ok, bye" ${{ steps.greet.outputs.message_ts }} "#general"
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
