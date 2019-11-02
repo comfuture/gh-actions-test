@@ -31,7 +31,7 @@ jobs:
     - run: sleep 3
     - uses: comfuture/actions/slack@master
       with:
-        channel: general
+        channel: ${{ steps.hello.outputs.channel }}
         message: Bye~
         update: ${{ steps.hello.outputs.ts }}
       env:
