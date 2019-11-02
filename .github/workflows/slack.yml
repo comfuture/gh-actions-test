@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: comfuture/actions/slack@node-slack
       with:
-        message: Hello
+        message: Hello!
         channel: general
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
