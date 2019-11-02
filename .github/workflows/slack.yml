@@ -9,30 +9,29 @@ jobs:
     
     steps:
     - uses: comfuture/actions/slack@master
-      with:
-        channel: general
-        message: Hello world! 안녕, 세계!
-        attachments: >
-          - pretext: 상태
-            color: good
-            fields:
-            - title: Kubernetes
-              value: Everything OK
-              short: false
-      env:
-        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-    - uses: comfuture/actions/slack@master
       id: hello
       with:
         channel: general
-        message: Hello?
+        message: 홈페이지 빌드를 시작했습니다.
+        attachments: >
+          - color: warning
+            fields:
+            - title: 상태
+              value: 빌드중...
+              short: false
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
     - run: sleep 3
     - uses: comfuture/actions/slack@master
       with:
         channel: ${{ steps.hello.outputs.channel }}
-        message: Bye~
+        message: 배포가 완료되었습니다.
+        attachments: >
+          - color: good
+            fields:
+            - title: 상태
+              value: 빌드 완료!
+              short: false
         update: ${{ steps.hello.outputs.ts }}
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
