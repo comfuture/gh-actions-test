@@ -21,11 +21,10 @@ jobs:
               short: false
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-    - run: sleep 3
+    - run: sleep 20
     - uses: comfuture/actions/slack@master
       with:
         channel: ${{ steps.hello.outputs.channel }}
-        message: 배포가 완료되었습니다.
         attachments: >
           - color: good
             fields:
