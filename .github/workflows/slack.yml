@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: comfuture/actions/slack@node-slack
+    - uses: comfuture/actions/slack@master
       with:
         channel: general
         message: Hello world! 안녕, 세계!
@@ -19,13 +19,13 @@ jobs:
             - title: Kubernetes
               value: Everything OK
               short: false
-    - uses: comfuture/actions/slack@latest
+    - uses: comfuture/actions/slack@master
       id: hello
       with:
         channel: general
         message: Hello?
     - run: sleep 3
-    - uses: comfuture/actions/slack@latest
+    - uses: comfuture/actions/slack@master
       with:
         channel: general
         message: Bye~
