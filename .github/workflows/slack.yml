@@ -10,7 +10,20 @@ jobs:
     steps:
     - uses: comfuture/actions/slack@node-slack
       with:
-        message: Hello world! 안녕, 세계!
         channel: general
+        message: Hello world! 안녕, 세계!
+        attachments: >
+          [
+            {
+              "pretext": "상태",
+              "color": "good",
+              "fields": [
+                  {
+                      "title": "Kubernetes",
+                      "value": "Everything OK",
+                      "short": false
+                  }
+              ],
+          ]
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
