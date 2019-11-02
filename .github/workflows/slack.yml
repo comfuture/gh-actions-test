@@ -19,5 +19,14 @@ jobs:
             - title: Kubernetes
               value: Everything OK
               short: false
-      env:
-        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+    - uses: comfuture/actions/slack@latest
+      id: hello
+      with:
+        channel: general
+        message: Hello?
+    - run: sleep 3
+    - uses: comfuture/actions/slack@latest
+      with:
+        channel: general
+        message: Bye~
+        update: ${{ steps.hello.outputs.ts }}
