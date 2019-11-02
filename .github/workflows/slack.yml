@@ -23,7 +23,8 @@ jobs:
                       "value": "Everything OK",
                       "short": false
                   }
-              ],
+              ]
+            }
           ]
       env:
         SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
