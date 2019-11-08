@@ -1,0 +1,12 @@
+name: ecr test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build docker image
+      run: |
+        aws ecr get-login
+        docker images
